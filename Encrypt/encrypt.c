@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void encrypt(char *IFNAME, char *OFNAME, char *PASSWORF)
+void encrypt(char *IFname, char *OFname, char *PASSWORD)
 {
-
+	/*********************
+	 * encrypt code here*/
 }

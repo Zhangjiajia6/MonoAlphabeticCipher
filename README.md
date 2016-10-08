@@ -1,6 +1,6 @@
 #MonoAlphabeticCipher
 
-Author: Jiajia Zhang
+Author: [Jiajia Zhang](https://github.com/Zhangjiajia6)
 
 Time:2016-9-30
 
