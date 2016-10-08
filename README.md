@@ -4,7 +4,7 @@ Author: Jiajia Zhang
 
 Time:2016-9-30
 
-Released under a *"Simplified BSD"* license
+Released under a *"MIT"* license
 
 ##Programming Language: C/C++
 
