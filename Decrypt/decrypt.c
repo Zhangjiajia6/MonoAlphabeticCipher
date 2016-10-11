@@ -1,8 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void decrypt(FILE *IFname, FILE *OFname, FILE *PASSWORD)
+extern char *GetDecryptPwd(char *EncryptPassword);
+extern void Substitution(char *IFname, char *OFname, char *password);
+extern void printUsage(char *name);
+
+void decrypt(char *IFname, char *OFname, char *password)
 {
-	/*********************
-	 * decrypt code here*/
+	/*get decrypt password from encrypt password*/
+
+	char *decryptPwd;
+	decryptPwd = GetDecryptPwd(password);
+
+	/*substitution using decrypt password to get the plaintext*/
+
+	Substitution(IFname, OFname, decryptPwd);
 }
