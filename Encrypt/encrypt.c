@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 extern char* CheckAndReadPwd(char *password);
 extern void Substitution(char *IFname, char *OFname, char *password);

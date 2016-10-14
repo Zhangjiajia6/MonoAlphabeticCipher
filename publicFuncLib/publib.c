@@ -62,6 +62,23 @@ char *CheckAndReadPwd(char *password)
 	return pwd;
 }
 
+char *GetDecryptPwd(char *password)
+{
+	char *pwd;
+	static char decryptPwd[NUM_OF_LETTERS];
+	int index, DeIndex;
+
+	pwd = CheckAndReadPwd(password);
+
+	for (index = 0; index < NUM_OF_LETTERS; index++)
+	{
+		DeIndex = pwd[index] - 'A';
+		decryptPwd[DeIndex] = 'A' + index;
+	}
+
+	return decryptPwd;
+}
+
 void Substitution(char *IFname, char *OFname, char *password)
 {
 	FILE *input, *output;
@@ -102,3 +119,29 @@ void Substitution(char *IFname, char *OFname, char *password)
 	CloseFileAndCheck(output);
 }
 
+double *GetFrequency(char *filename)
+{
+	FILE *fp;
+	fp = OpenFileAndCheck(filename,"r");
+
+	static double Frequency[NUM_OF_LETTERS] = {0};
+	char ch;
+	int index;
+	double SumOfChars = 0;
+
+	while ((ch = getc(fp)) != EOF)
+	{
+		if (isalpha(ch))
+		{
+			SumOfChars += 1;
+			ch = toupper(ch);
+			index = ch - 'A';
+			Frequency[index] += 1;
+		}
+	}
+
+	for (index = 0; index < NUM_OF_LETTERS; index++)
+		Frequency[index] = Frequency[index]*100/SumOfChars;
+
+	return Frequency;
+}
